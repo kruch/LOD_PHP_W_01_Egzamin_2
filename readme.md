@@ -3,11 +3,12 @@
 ## Jak rozwiązywać zadania?
 
 Żeby rozwiązać egzamin musisz wykonać następujące kroki:
+
 1. Żeby zacząć, stwórz tak zwany [**fork**][forking] repozytorium z zadaniami.
-1. Następnie [**sklonuj**][ref-clone] repozytorium na swój komputer.
-1. Rozwiąż zadania i [**skomituj**][ref-commit] zmiany do swojego repozytorium.
-1. [**Wypchnij**][ref-push] zmiany na swoje repozytorium na GitHubie.
-1. [Stwórz **pull request**][pull-request] do oryginalnego repozytorium kiedy skończysz wszystkie ćwiczenia.
+2. Następnie [**sklonuj**][ref-clone] repozytorium na swój komputer.
+3. Rozwiąż zadania i [**skomituj**][ref-commit] zmiany do swojego repozytorium.
+4. [**Wypchnij**][ref-push] zmiany na swoje repozytorium na GitHubie.
+5. [Stwórz **pull request**][pull-request] do oryginalnego repozytorium kiedy skończysz wszystkie ćwiczenia.
 
 Pamiętaj że pull request **MUSI** być stworzony, inaczej wykładowca nie dostanie twoich odpowiedzi.
 
@@ -33,6 +34,7 @@ W bazie danych mamy następujące tablice:
 * Orders: id : int, description : text
 
 Napisz następujące zapytania sql (wystarczą same zapytanie SQL - nie musicie pisać kodu PHP):
+
 1. Wybranie wszystkich itemów o cenie większej niż 13,
 2. Włożenie do tablicy Orders nowego zamówienia o opisie "przykładowy opis",
 3. Usuniecie użytkownika o id 7,
@@ -45,6 +47,7 @@ Napisz kod PHP który wypisze na stronie wszystkie wiadomości dla użytkownika 
 
 ### Zadanie 3 (3.5 ptk)
 Napisz kod PHP klasy VIPUser. Klasa ma spełniać następujące właściwości: 
+
 1. Dziedziczyć po klasie User
 2. Posiadać dodatkowy atrybut: vipCardNumber
 3. Posiadać konstruktor który przyjmuje następujące dane: imię, nazwisko, mail, numer karty VIP. Imię, nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej.
