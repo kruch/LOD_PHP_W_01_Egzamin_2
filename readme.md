@@ -1,4 +1,4 @@
-# PHP - Podstawy PHP - Egzamin 
+# PHP - Egzamin 2
 
 ## Jak rozwiązywać zadania?
 
@@ -17,7 +17,7 @@ Podczas egzaminu możecie kożystać z notatek, kodu napisanego wcześniej, inte
 ## Pytania otwarte
 Odpowiedzi wpisz w pliku answers.txt.
 
-### Pytanie 1 (2.5 ptk)
+### Pytanie 1 (2 ptk)
 Napisz jakie znasz relacje w MySql? Opisz je i podaj przykład w jakim taka relacja może być użyta.
 
 ### Pytanie 2 (2 ptk)
@@ -43,16 +43,30 @@ Napisz następujące zapytania sql (wystarczą same zapytanie SQL - nie musicie 
 6. Wybranie wszystkich użytkowników o imieniu zaczynającym się od L,
 
 ### Zadanie 2 (4 ptk)
-Napisz kod PHP który wypisze na stronie wszystkie wiadomości dla użytkownika o id 5 (tabele takie same jak w poprzednim zadaniu). Pamiętaj o poprawnym połączeniu i jego zamknięciu.
+Napisz kod PHP który wypisze na stronie wszystkie wiadomości dla użytkownika o id 5 (tabele takie same jak w poprzednim zadaniu). Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
 
-### Zadanie 3 (3.5 ptk)
+### Zadanie 3 (4 ptk)
+W pliku zad3_form.php napsiz formularz spełniający następujące założenia:
+
+1. Ma przenosić do strony zad3_reciver.php metodą POST,
+2. Pobierać pola: name, description, price.
+
+W pliku zad3_reciver.php napisz kod który:
+
+1. W przypadku wejścia na tą stronę metodą POST pobierze informacje przesłane jako: name, description, price,
+2. Wpisze te dane do bazy danych do tabelki Items (taberlka taka sama jak w zadaniu 1).
+
+Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
+
+### Zadanie 4 (4 ptk)
 Napisz kod PHP klasy VIPUser. Klasa ma spełniać następujące właściwości: 
 
-1. Dziedziczyć po klasie User
-2. Posiadać dodatkowy atrybut: vipCardNumber
+1. Dziedziczyć po klasie User (znajduje się w pliku User.php)
+2. Posiadać dodatkowy atrybut: ```vipCardNumber```
 3. Posiadać konstruktor który przyjmuje następujące dane: imię, nazwisko, mail, numer karty VIP. Imię, nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej.
-4. Posiadać prywatną metodę checkCard() – ciało metody może zostać puste.
-5. Posiadać publiczną metodę useViPCard() – ciało metody może zostać puste.
+4. Posiadać prywatną metodę ```checkCard()``` – ciało metody może zostać puste.
+5. Posiadać publiczną metodę ```useViPCard()``` – ciało metody może zostać puste.
+6. Posiadać publiczą funkcję ```setVipCardNumber($newCardNumber)``` i ```getVipCardNumber()```. Funkcja set ma nastaiwać smienną vipCardNumber a funkcja get ją zwracać.
  
 
 <!-- Links -->
