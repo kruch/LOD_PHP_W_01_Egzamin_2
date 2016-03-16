@@ -17,7 +17,7 @@ Podczas egzaminu możecie kożystać z notatek, kodu napisanego wcześniej, inte
 ## Pytania otwarte
 Odpowiedzi wpisz w pliku answers.txt.
 
-### Pytanie 1 (2 ptk)
+### Pytanie 1 (3 ptk)
 Napisz jakie znasz relacje w MySql? Opisz je i podaj przykład w jakim taka relacja może być użyta.
 
 ### Pytanie 2 (2 ptk)
@@ -63,10 +63,10 @@ Napisz kod PHP klasy VIPUser. Klasa ma spełniać następujące właściwości:
 
 1. Dziedziczyć po klasie User (znajduje się w pliku User.php)
 2. Posiadać dodatkowy atrybut: ```vipCardNumber```
-3. Posiadać konstruktor który przyjmuje następujące dane: imię, nazwisko, mail, numer karty VIP. Imię, nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej.
-4. Posiadać prywatną metodę ```checkCard()``` – ciało metody może zostać puste.
+3. Posiadać konstruktor który przyjmuje następujące dane: imię, nazwisko, mail, numer karty VIP. Imię, nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej. Konstruktor ma sprawdzać czy podany numer jest prawidowy.
+4. Posiadać prywatną metodę ```checkCard()``` – numer jest prawidowy jeżeli jest wikszy od 999 i podzielny przez 2.
 5. Posiadać publiczną metodę ```useViPCard()``` – ciało metody może zostać puste.
-6. Posiadać publiczą funkcję ```setVipCardNumber($newCardNumber)``` i ```getVipCardNumber()```. Funkcja set ma nastaiwać smienną vipCardNumber a funkcja get ją zwracać.
+6. Posiadać publiczą funkcję ```setVipCardNumber($newCardNumber)``` i ```getVipCardNumber()```. Funkcja set ma nastaiwać zmienną vipCardNumber (tylko jeżeli podany nowy numker spenia zaożenia) a funkcja get ją zwracać.
  
 
 <!-- Links -->
