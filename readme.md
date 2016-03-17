@@ -36,18 +36,19 @@ W bazie danych mamy następujące tablice:
 Napisz następujące zapytania sql (wystarczą same zapytanie SQL - nie musicie pisać kodu PHP):
 
 1. Tworzcą tabelke Users (email ma być unikatowy) - 0.5ptk
-2. Tworzcą tabelke Messages (pamitaj o relacji 1:wiele z tabelką Users) - 1ptk
-2. Wybranie wszystkich itemów o cenie większej niż 13 - 0.5ptk
-3. Włożenie do tablicy Orders nowego zamówienia o opisie "przykładowy opis" - 0.5ptk
-4. Usuniecie użytkownika o id 7 - 0.5ptk
+2. Tworzcą tabelke Messages (pamiętaj o relacji 1:wiele z tabelką Users) - 0.5ptk
+3. Tworzcą tabelke Items - 0.5ptk
+4. Tworzcą tabelke Orders - 0.5ptk
 5. Stworzenie relacji wiele do wielu pomiędzy tabelami Items a Orders - 0.5ptk
-6. Wybranie wszystkich użytkowników którzy maja jakaś wiadomość - 0.5ptk
-7. Wybranie wszystkich użytkowników o imieniu zaczynającym się od L - 0.5ptk
+6. Wybranie wszystkich itemów o cenie większej niż 13 - 0.5ptk
+7. Włożenie do tablicy Orders nowego zamówienia o opisie "przykładowy opis" - 0.5ptk
+8. Usuniecie użytkownika o id 7 - 0.5ptk
+9. Wybranie wszystkich użytkowników którzy maja jakaś wiadomość - 0.5ptk
 
-### Zadanie 2 (4 ptk)
+### Zadanie 2 (2 ptk)
 Napisz kod PHP który wypisze na stronie wszystkie wiadomości dla użytkownika o id 5 (tabele takie same jak w poprzednim zadaniu). Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
 
-### Zadanie 3 (4 ptk)
+### Zadanie 3 (2 ptk)
 W pliku zad3_form.php napsiz formularz spełniający następujące założenia:
 
 1. Ma przenosić do strony zad3_reciver.php metodą POST,
@@ -60,7 +61,7 @@ W pliku zad3_reciver.php napisz kod który:
 
 Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
 
-### Zadanie 4 (4 ptk)
+### Zadanie 4 (3 ptk)
 Napisz kod PHP klasy VIPUser. Klasa ma spełniać następujące właściwości: 
 
 1. Dziedziczyć po klasie User (znajduje się w pliku User.php)
