@@ -27,27 +27,33 @@ Jakie są cztery główne założenia programowania obiektowego? Opisz je.
 ## Zadania praktyczne
 Kod wpisz w odpowiednim pliku, zgodnie z poleceniem zadania.
 
+### Zadanie Przygotowawcze
+Wypełnij dane do połączenia z bazą danych wpisując je do odpowiednich zmiennych znajdujących się w pliku `config.php`. W zadanich wymagających połączenia do bazy danych kożystaj z btych zmiennych (plik `config.php` jest już dołączony do plików odpowiedzi).
+Zaimportuj też dane znajdujące się w pliku `exam.sql` do swojej bazy danych.
+
 ### Zadanie 1
-(4,5 pkt)
+(3,5 pkt)
 
 W bazie danych mamy następujące tablice:
 ```SQL
-* Users: id : int, name : varchar(60), email : varchar(60), password : varchar(60)
+* Users: id : int, username : varchar(60), email : varchar(60), password : varchar(60)
 * Messages: id : int, user_id: int, message : text
 * Items: id : int, name : varchar(40), description : text, price : real(7,2)
 * Orders: id : int, description : text
 ```
 Napisz następujące zapytania SQL (wystarczą same zapytania SQL, nie musisz pisać kodu PHP):
 
-1. Tworzące tabelę `Users` (email ma być unikatowy).
-2. Tworzące tabelę `Messages` (pamiętaj o relacji jeden do wielu z tabelą `Users`).
-3. Tworzące tabelę `Items`.
-4. Tworzące tabelę `Orders`.
-5. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`.
-6. Wybranie wszystkich itemów o cenie większej niż 13.
-7. Włożenie do tabeli `Orders` nowego zamówienia o opisie "przykładowy opis".
-8. Usuniecie użytkownika o `id` 7.
-9. Wybranie wszystkich użytkowników, którzy maja jakaś wiadomość.
+1. Stworzenie tabelki `Destinations`: 
+  ```SQL
+  * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
+  ```
+  Kolumna `id` ma być kluczem głównym, kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelkę `Destinations` z tabelką `Users` za pomocą relacji wiele do wielu. 
+2. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`.
+3. Dopisanie do zamówienia o id 6 trzech przedmiotów (tabelka `Items`) o podanych id: 2, 5 i 9.
+4. Wybranie wszystkich przedmiotów o cenie większej niż 50.
+5. Włożenie do tabeli `Orders` nowego zamówienia o opisie "Przykładowy opis 1".
+6. Usuniecie użytkownika o `id` 7.
+7. Wybranie wszystkich użytkowników, którzy maja jakaś wiadomość.
 
 Za każde zapytanie przysługuje pół punktu.
 
@@ -63,12 +69,13 @@ W pliku `zad3_form.php` napisz formularz spełniający następujące założenia
 
 W pliku `zad3_receiver.php` napisz kod, który:
 1. W przypadku wejścia na tę stronę metodą POST pobierze informacje przesłane jako: `name`, `description`, `price`.
-2. Wpisze te dane do bazy danych do tabeli `Items` (tabela taka sama jak w zadaniu 1).
+2. Wpisze te dane do bazy danych do tabeli `Items`.
 
 Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
 
+TODO: Zmienić treść zadania 4
 ### Zadanie 4
-(3 pkt)
+(4 pkt) - powiększenie o jeden punkt
 Napisz kod PHP klasy `VIPUser`. Klasa ma spełniać następujące właściwości:
 
 1. Dziedziczyć po klasie `User` (znajduje się w pliku **User.php**).
