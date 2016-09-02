@@ -41,19 +41,19 @@ W bazie danych mamy następujące tablice:
 * Items: id : int, name : varchar(40), description : text, price : real(7,2)
 * Orders: id : int, description : text
 ```
-Napisz następujące zapytania SQL (wystarczą same zapytania SQL, nie musisz pisać kodu PHP):
+Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie zmienne znajdujące się w pliku zad1.php):
 
-1. Stworzenie tabelki `Destinations`: 
+a. Stworzenie tabelki `Item_Reviews`: 
   ```SQL
-  * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
+  * Item_Reviews: id : int, item_id : int, review : text, points : decimal(2,1)
   ```
   Kolumna `id` ma być kluczem głównym, kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelkę `Destinations` z tabelką `Users` za pomocą relacji wiele do wielu. 
-2. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`.
-3. Dopisanie do zamówienia o id 6 trzech przedmiotów (tabelka `Items`) o podanych id: 2, 5 i 9.
-4. Wybranie wszystkich przedmiotów o cenie większej niż 50.
-5. Włożenie do tabeli `Orders` nowego zamówienia o opisie "Przykładowy opis 1".
-6. Usuniecie użytkownika o `id` 7.
-7. Wybranie wszystkich użytkowników, którzy maja jakaś wiadomość.
+b. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`. Tabelka ma się nazywać `Items_Orders`. Kolumny które będą kluczami zewnętrznymi mają się nazywać `item_id` i `order_id`.
+c. Dopisanie do zamówienia o id 6 trzech przedmiotów (tabelka `Items`) o podanych id: 2, 5 i 9. Jeżeli chcesz to napisać w więcej niż jednym zapytaniu SQL pamiętaj żeby je rozdzielić średnikiem `;`.
+d. Wybranie wszystkich przedmiotów o cenie większej niż 50, sortując je od najtańszego do najdroższego.
+e. Włożenie do tabeli `Orders` nowego zamówienia o opisie "Przykładowy opis 1".
+f. Usuniecie użytkownika o `id` 10.
+g. Wybranie wszystkich użytkowników, którzy maja jakaś wiadomość.
 
 Za każde zapytanie przysługuje pół punktu.
 
