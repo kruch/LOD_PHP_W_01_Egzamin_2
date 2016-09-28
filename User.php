@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Jacek
- * Date: 2016-03-16
- * Time: 16:22
- */
 class User{
     private $name;
     private $surname;

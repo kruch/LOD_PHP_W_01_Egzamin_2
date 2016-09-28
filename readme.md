@@ -13,6 +13,8 @@
 * Podczas egzaminu możesz korzystać z notatek, kodu napisanego wcześniej, internetu i prezentacji.
 * Zabroniona jest jakakolwiek komunikacja z innymi kursantami.
 
+
+
 ## Pytania otwarte
 Odpowiedzi wpisz w pliku **answers.txt**.
 
@@ -28,7 +30,13 @@ Jakie są cztery główne założenia programowania obiektowego? Opisz je.
 Kod wpisz w odpowiednim pliku, zgodnie z poleceniem zadania.
 
 ### Zadanie Przygotowawcze
-Wypełnij dane do połączenia z bazą danych wpisując je do odpowiednich zmiennych znajdujących się w pliku `config.php`. W zadaniach wymagających połączenia do bazy danych korzystaj z tych zmiennych (plik `config.php` jest już dołączony do plików odpowiedzi). Zaimportuj dane znajdujące się w pliku `exam.sql` do swojej bazy danych.
+Wypełnij dane do połączenia z bazą danych wpisując je do odpowiednich zmiennych znajdujących się w pliku `config.php`. W zadaniach wymagających połączenia do bazy danych korzystaj z tych zmiennych (plik `config.php` jest już dołączony do plików odpowiedzi).
+Zaimportuj też dane znajdujące się w pliku `exam.sql` do swojej bazy danych.
+**Zanim zaczniesz rozwiązywać zadanie dokładnie przeczytaj całą jego treść**
+
+### Zadanie 1
+(5 pkt)
+
 W bazie danych mamy następujące tablice:
 ```SQL
 * Users: id : int, username : varchar(60), email : varchar(60), password : varchar(60)
@@ -36,66 +44,57 @@ W bazie danych mamy następujące tablice:
 * Items: id : int, name : varchar(40), description : text, price : real(7,2)
 * Orders: id : int, description : text
 ```
-Każda z tablic w bazie posiada już kilka wpisów. 
-Wszystkie zadania które oparte są o SQL rozwiązuj na tej bazie danych.
-
-### Zadanie 1
-(3,5 pkt)
-
 Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie zmienne znajdujące się w pliku zad1.php):
 
-a. Stworzenie tabelki `Item_Reviews`: 
+a. Stworzenie tabelki `Destinations` (1 ptk): 
   ```SQL
-  * Item_Reviews: id : int, item_id : int, review : text, points : decimal(2,1)
+  * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
   ```
   Kolumna `id` ma być kluczem głównym, kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelkę `Destinations` z tabelką `Users` za pomocą relacji wiele do wielu. 
-b. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`. Tabelka ma się nazywać `Items_Orders`. Kolumny które będą kluczami zewnętrznymi mają się nazywać `item_id` i `order_id`.
-c. Dopisanie do zamówienia o id 6 trzech przedmiotów (tabelka `Items`) o podanych id: 2, 5 i 9. Jeżeli chcesz to napisać w więcej niż jednym zapytaniu SQL pamiętaj żeby je rozdzielić średnikiem `;`.
-d. Wybranie wszystkich przedmiotów o cenie większej niż 50, sortując je od najtańszego do najdroższego.
-e. Włożenie do tabeli `Orders` nowego zamówienia o opisie "Przykładowy opis 1".
-f. Usuniecie użytkownika o `id` 10.
-g. Wybranie wszystkich użytkowników, którzy maja jakaś wiadomość.
-
-Za każde zapytanie przysługuje pół punktu.
+b. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders` (1 ptk).
+c. Połączenie zamówienia (tabelka `Orders`) o id 6 z przedmiotem (tabelka `Items`) o id: 2 (0.5 ptk).
+d. Wybranie wszystkich przedmiotów o cenie większej niż 50 (0.5 ptk).
+e. Włożenie do tabeli `Orders` nowego zamówienia o opisie "Przykładowy opis 1" (0.5 ptk).
+f. Usuniecie użytkownika o `id` 7 (0.5 ptk).
+g. Wybranie wszystkich użytkowników, którzy maja jakaś wiadomość (1 ptk).
 
 ### Zadanie 2
-(2 pkt)
-Napisz kod PHP, który wypisze na stronie wszystkie wiadomości dla użytkownika o id przekazanym metodą GET. 
-Strona pokazująca wiadomości ma spełniać następujące wymogi:
-1. Odbierać parametr wysłany metodą GET o nazwie `userId`,
-2. W przypadku przesłania parametru powinna wczytać wszystkie wiadomości które są zapisane w systemie (tabelka `Messages`) i wyświetlić je,
-3. W przypadku braku przekazania parametru `userId` strona powinna wyświetlić napis: `Brak potrzebnych danych do wyświetlenia wiadomości.`,
-4. Wiadomości powinny być wyświetlane po jednej wiadomości w linii. Wiadomość powinna być wyświetlona w następującym formacie:
-  ```
-  id wiadomości, tekst wiadomości
-  ```
-5. W przypadku w którym użytkownik o podanym id nie ma w systemie żadnych wiadomości strona powinna wyświetlić napis: `Brak wiadomości dla danego użytkownika`.
+(3 pkt)
+W pliku `zad2_receiver.php` napisz kod PHP, który wypisze na stronie wszystkie wiadomości dla użytkownika o `id` przekazanym przez GET (zmienna o nazwie `userId`). Wiadomości powinny zostać wyświetlone w formacie `<id wiadomości>, <treść waidomości>` po jednej wiadomości w linii. W przypadku w którym użytkownik nie posiada żadnej wiadomości w systemie na stronie powinien pojawić się komunikat "Brak wiadomości dla danego użytkownika"
 
-Pamiętaj o poprawnym stworzeniu i zamknięciu połączenia z bazą danych.
+Jeżeli zostaną przesłane dane inną metodą strona powinna wyświetlić komunikat "Proszę wejść na stronę metodą GET". W przypadku wejścia na stronę i nie przesłania id strona powinna wyświetlić komunikat "Brak przesłania wymaganych danych GET".
+
+W pliku `zad2_sender.html` znajduje się kilka linków które pomogą Ci przetestować twój kod.
+
+**Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.**
 
 ### Zadanie 3
 (2 pkt)
-W pliku `zad3_form.php` napisz formularz spełniający następujące założenia:
-1. Ma przenosić do strony `zad3_receiver.php` metodą POST.
-2. Pobierać pola: `name`, `description`, `price`.
+W pliku `zad3.php` jest formularz służący do dodania nowego przedmiotu do bazy danych. Przeanalizuj go. Następnie w tym samym pliku napisz kod, który:
+1. W przypadku wejścia na tę stronę metodą POST pobierze informacje przesłane jako: `name`, `description`, `price`. Jeżeli nie zostaną przesłane wszystkie dane to strona powinna wyświetlić komunikat "Brak przesłania wymaganych danych POST".
+2. Wpisze te dane do bazy danych do tabeli `Items`. Po dodaniu przedmiotu powinien wyświetlić komunikat: "Do bazy danych został dodany nowy przedmiot o id <id dodanego przedmiotu>".
 
-W pliku `zad3_receiver.php` napisz kod, który:
-1. W przypadku wejścia na tę stronę metodą POST pobierze informacje przesłane jako: `name`, `description`, `price`.
-2. Wpisze te dane do bazy danych do tabeli `Items`.
-
-Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
+**Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.**
 
 ### Zadanie 4
-(4 pkt) - powiększenie o jeden punkt
+(3 ptk)
+W pliku zad4.php znajduje się klasa `MyDate`. Przeanalizuj dokładnie jej kod a następnie:
+1. Dopisz konstruktor który stworzy obiekt `MyDate` nastawiony na 1 Stycznia roku 2000.
+2. Dopisz publiczne getery i setery dla atrybutów klasy. Setery nie powinny pozwolić na nastawienie danych znajdujących się poza opisanymi zakresami. W przypadku próby takiego zapisu atrybut klasy nie powinien być zmieniony (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`).
+3. Dopisz ciało metody `moveForwardByDays($days)` i ``. Metoda ta powinna a przesuwać datę o podaną ilość dni (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`). Metoda powinna pozwalać przesuwać dni zarówno do przodu. Pamiętaj o zachowaniu poprawnych wartości zarówno dni, jak i miesięcy i lat. Dla uproszczenia możesz założyć że każdy miesiąc ma 31 dni. Jeżeli do metody zostaną przekazane złe dane (np. liczba ujemna, zmienna nie będąca liczbą całkowitą) metoda nie powinna nic robić. 
+
+
+### Zadanie 5
+(3.5 pkt)
 Napisz kod PHP klasy `VIPUser`. Klasa ma spełniać następujące właściwości:
 
-1. Dziedziczyć po klasie `User` (znajduje się w pliku **User.php** - nie zmieniaj kodu klasy `User`).
-2. Mieć dodatkowy atrybut: ```vipCardNumber```.
-3. Mieć konstruktor, który przyjmuje następujące dane: imię, nazwisko, mail, numer karty VIP. Imię, nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej. Konstruktor ma sprawdzać, czy podany numer jest prawidłowy (założenia takie same jak w przypadku metody ```checkCard($newNumber)```). Jeżeli jest  &ndash; to go nastawiać, jeżeli nie  &ndash; to numer ma być nastawiony na ```null```.
+1. Dziedziczyć po klasie `User` (znajduje się w pliku **User.php**).
+2. Mieć dodatkowy publiczny atrybut: ```vipCardNumber```.
+3. Mieć konstruktor, który przyjmuje następujące dane: imię, nazwisko, mail, numer karty VIP. Imię, nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej. Konstruktor ma sprawdzać, czy podany numer jest prawidłowy (założenia są opisane w punkcie 4). Jeżeli jest  &ndash; to go nastawiać, jeżeli nie  &ndash; to numer ma być nastawiony na ```null```.
 4. Mieć prywatną metodę ```checkCard($newNumber)``` &ndash; numer jest prawidłowy, jeżeli jest większy niż 999 i podzielny przez 2. Funkcja ma zwracać wartość logiczną.
-5. Mieć publiczną metodę ```useViPCard()``` &ndash; metoda ma zwracać (**nie wyświetlać!**) napis `Kata o numerze <numer karty> została użyta`. W przypadku w którym numer karty nie jest nastawiony (ma wartość 'NULL') metoda ta powinna zwracać napis `Źle nastawiony numer karty`. 
-6. Mieć publiczną funkcję ```setVipCardNumber($newCardNumber)``` i ```getVipCardNumber()```. Funkcja set ma nastawiać zmienną `vipCardNumber`  (założenia takie same jak w przypadku metody ```checkCard($newNumber)```, jeżeli założenia nie są spełnione to numer nie powinien się zmienić), a funkcja get &ndash; ją zwracać.
+5. Mieć publiczne funkcję ```setVipCardNumber($newCardNumber)``` i ```getVipCardNumber()```. Funkcja set ma nastawiać zmienną `vipCardNumber` (jeżeli podany nowy numer spełnia założenia z punktu 4, jeżeli nie to ma zostać poprzednia wartość), a funkcja get &ndash; ją zwracać.
 
+**Nie zmieniaj nic w pliku User.php**
 
 <!-- Links -->
 [forking]: https://guides.github.com/activities/forking/
