@@ -63,9 +63,9 @@ Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie z
 (3 pkt)
 W pliku `zad2_receiver.php` napisz kod PHP, który wypisze na stronie wszystkie wiadomości dla użytkownika o `id` przekazanym przez GET (zmienna o nazwie `userId`). Strona powinna spełniać nastepujące wymogi:
   1. Wiadomości powinny zostać wyświetlone w formacie `<id wiadomości>, <treść waidomości>` po jednej wiadomości w linii. 
-  2. W przypadku w którym użytkownik nie posiada żadnej wiadomości w systemie na stronie powinien pojawić się komunikat "Brak wiadomości dla danego użytkownika"
-  3. W pzypadku wejścia na stronę inną metodą niż GET na stronie powinien wyświetlić się komunikat "Proszę wejść na stronę metodą GET". 
-  4. W przypadku wejścia na stronę i nie przesłania id strona powinna wyświetlić komunikat "Brak przesłania wymaganych danych GET".
+  2. W przypadku w którym użytkownik nie posiada żadnej wiadomości w systemie na stronie powinien pojawić się komunikat `Brak wiadomości dla danego użytkownika`
+  3. W pzypadku wejścia na stronę inną metodą niż GET na stronie powinien wyświetlić się komunikat `Proszę wejść na stronę metodą GET`. 
+  4. W przypadku wejścia na stronę i nie przesłania id strona powinna wyświetlić komunikat `Brak przesłania wymaganych danych GET`.
 
 W pliku `zad2_sender.html` znajduje się kilka linków które pomogą Ci przetestować twój kod.
 
@@ -74,8 +74,8 @@ W pliku `zad2_sender.html` znajduje się kilka linków które pomogą Ci przetes
 ### Zadanie 3
 (2 pkt)
 W pliku `zad3.php` jest formularz służący do dodania nowego przedmiotu do bazy danych. Przeanalizuj go. Następnie w tym samym pliku napisz kod, który:
-  1. W przypadku wejścia na tę stronę metodą POST pobierze informacje przesłane jako: `name`, `description`, `price`. Jeżeli nie zostaną przesłane wszystkie dane to strona powinna wyświetlić komunikat "Brak przesłania wymaganych danych POST". 
-  2. Wpisze te dane do bazy danych do tabeli `Items`. Po dodaniu przedmiotu powinien wyświetlić komunikat: "Do bazy danych został dodany nowy przedmiot o id <id dodanego przedmiotu>".
+  1. W przypadku wejścia na tę stronę metodą POST pobierze informacje przesłane jako: `name`, `description`, `price`. Jeżeli nie zostaną przesłane wszystkie dane to strona powinna wyświetlić komunikat `Brak przesłania wymaganych danych POST`. 
+  2. Wpisze te dane do bazy danych do tabeli `Items`. Po dodaniu przedmiotu powinien wyświetlić komunikat: `Do bazy danych został dodany nowy przedmiot o id <id dodanego przedmiotu>`.
 
 **Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.**
 
@@ -84,7 +84,11 @@ W pliku `zad3.php` jest formularz służący do dodania nowego przedmiotu do baz
 W pliku zad4.php znajduje się klasa `MyDate`. Przeanalizuj dokładnie jej kod a następnie:
   1. Dopisz konstruktor który stworzy obiekt `MyDate` nastawiony na 1 Stycznia roku 2000.
   2. Dopisz publiczne getery i setery dla atrybutów klasy. Setery nie powinny pozwolić na nastawienie danych znajdujących się poza opisanymi zakresami. W przypadku próby takiego zapisu atrybut klasy nie powinien być zmieniony (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`).
-  3. Dopisz ciało metody `moveForwardByDays($days)` i ``. Metoda ta powinna a przesuwać datę o podaną ilość dni (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`). Metoda powinna pozwalać przesuwać dni zarówno do przodu. Pamiętaj o zachowaniu poprawnych wartości zarówno dni, jak i miesięcy i lat. Dla uproszczenia możesz założyć że każdy miesiąc ma 31 dni. Jeżeli do metody zostaną przekazane złe dane (np. liczba ujemna, zmienna nie będąca liczbą całkowitą) metoda nie powinna nic robić. 
+  3. Dopisz ciało metody `moveForwardByDays($days)`. Metoda ta powinna przesuwać datę do przodu o podaną ilość dni (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`). Jeżeli do metody zostaną przekazane złe dane (np. liczba ujemna, zmienna nie będąca liczbą całkowitą) metoda nie powinna nic robić.
+  
+  Pamiętaj o zachowaniu poprawnych wartości zarówno dni, jak i miesięcy i lat. 
+  
+  Dla uproszczenia możesz założyć że każdy miesiąc ma 31 dni.
 
 
 ### Zadanie 5
