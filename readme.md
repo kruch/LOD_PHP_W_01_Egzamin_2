@@ -52,11 +52,11 @@ Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie z
     * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
     ```
     Kolumna `id` ma być kluczem głównym, kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelkę `Destinations` z tabelką `Users` za pomocą relacji wiele do wielu. 
-  2. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders` (1 ptk).
-  3. Połączenie zamówienia (tabelka `Orders`) o id 6 z przedmiotem (tabelka `Items`) o id: 2 (0.5 ptk).
-  4. Wybranie wszystkich przedmiotów o cenie większej niż 50 (0.5 ptk).
+  2. Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`. Tabelka łącząca ma się nazywac `Items_Orders` (1 ptk).
+  3. Dodanie do tabelki `Items_Orders` (stworzonej w punkcie b) wpisu łączącego zamówienie (tabelka `Orders`) o id 6 z przedmiotem (tabelka `Items`) o id 2. (0.5 ptk).
+  4. Wybranie wszystkich przedmiotów o cenie większej niż 50, posortowanych po cenie (rosnąco)(0.5 ptk).
   5. Włożenie do tabeli `Orders` nowego zamówienia o opisie "Przykładowy opis 1" (0.5 ptk).
-  6. Usuniecie użytkownika o `id` 7 (0.5 ptk).
+  6. Usuniecie użytkownika o `id` 10 (0.5 ptk).
   7. Wybranie wszystkich użytkowników, którzy maja jakaś wiadomość (1 ptk).
 
 ### Zadanie 2
@@ -84,11 +84,8 @@ W pliku `zad3.php` jest formularz służący do dodania nowego przedmiotu do baz
 W pliku zad4.php znajduje się klasa `MyDate`. Przeanalizuj dokładnie jej kod a następnie:
   1. Dopisz konstruktor który stworzy obiekt `MyDate` nastawiony na 1 Stycznia roku 2000.
   2. Dopisz publiczne getery i setery dla atrybutów klasy. Setery nie powinny pozwolić na nastawienie danych znajdujących się poza opisanymi zakresami. W przypadku próby takiego zapisu atrybut klasy nie powinien być zmieniony (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`).
-  3. Dopisz ciało metody `moveForwardByDays($days)`. Metoda ta powinna przesuwać datę do przodu o podaną ilość dni (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`). Jeżeli do metody zostaną przekazane złe dane (np. liczba ujemna, zmienna nie będąca liczbą całkowitą) metoda nie powinna nic robić.
-  
-  Pamiętaj o zachowaniu poprawnych wartości zarówno dni, jak i miesięcy i lat. 
-  
-  Dla uproszczenia możesz założyć że każdy miesiąc ma 31 dni.
+  3. Dopisz ciało metody `moveForwardByDays($days)`. Metoda ta powinna przesuwać datę do przodu o podaną ilość dni (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`). Jeżeli do metody zostaną przekazane złe dane (np. liczba ujemna, zmienna nie będąca liczbą całkowitą) metoda nie powinna nic robić.  
+  Pamiętaj o zachowaniu poprawnych wartości zarówno dni (nie powinno przekroczyć wartości 31), jak i miesięcy (nie powinno przekrowczyć wartości 12) i lat. Dla uproszczenia możesz założyć że każdy miesiąc ma 31 dni.
 
 
 ### Zadanie 5
