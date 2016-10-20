@@ -84,7 +84,7 @@ W pliku `zad3.php` jest formularz służący do dodania nowego przedmiotu do baz
 W pliku zad4.php znajduje się klasa `MyDate`. Przeanalizuj dokładnie jej kod a następnie:
   1. Dopisz konstruktor który stworzy obiekt `MyDate` nastawiony na 1 Stycznia roku 2000.
   2. Dopisz publiczne getery i setery dla atrybutów klasy. Setery nie powinny pozwolić na nastawienie danych znajdujących się poza opisanymi zakresami. W przypadku próby takiego zapisu atrybut klasy nie powinien być zmieniony (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`).
-  3. Dopisz ciało metody `moveForwardByDays($days)`. Metoda ta powinna przesuwać datę do przodu o podaną ilość dni (do sprawdzenia czy przekazana zmienna jest liczbą całkowitą użyj funkcji `is_integer`). Jeżeli do metody zostaną przekazane złe dane (np. liczba ujemna, zmienna nie będąca liczbą całkowitą) metoda nie powinna nic robić.  
+  3. Dopisz ciało metody `moveForwardByDay()`. Metoda ta powinna przesuwać datę do przodu o jeden dzień.
   Pamiętaj o zachowaniu poprawnych wartości zarówno dni (nie powinno przekroczyć wartości 31), jak i miesięcy (nie powinno przekrowczyć wartości 12) i lat. Dla uproszczenia możesz założyć że każdy miesiąc ma 31 dni.
 
 
