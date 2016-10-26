@@ -49,7 +49,7 @@ Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie z
     ```SQL
     * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
     ```
-    Kolumna `id` ma być kluczem głównym, kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelkę `Destinations` z tabelką `Users` za pomocą relacji wiele do wielu. 
+    Kolumna `id` ma być kluczem głównym, kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelkę `Destinations` z tabelką `Users` za pomocą relacji wiele do jednego (Użytkownik może mieć wiele destynacji, destynacja może być przypisana tylko do jednego użytkownika). 
   2. (1 ptk) Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`. Tabelka łącząca ma się nazywac `Items_Orders`.
   3. (0.5 ptk) Dodanie do tabelki `Items_Orders` (stworzonej w punkcie 2) wpisu łączącego zamówienie (tabelka `Orders`) o id 6 z przedmiotem (tabelka `Items`) o id 2.
   4. (0.5 ptk) Wybranie wszystkich przedmiotów o cenie większej niż 50, posortowanych rosnąco po cenie.
