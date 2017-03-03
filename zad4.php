@@ -5,6 +5,6 @@ class MyDate{
     private $month; //Wartość pomiędzy 0-12 nie powinna wychodzić pomiędzy te zakresy 
     private $year; //Wartość większa niż 0
     
-    public function moveForwardByDays($days){
+    public function moveForwardByDay(){
     }
 }
