@@ -61,7 +61,7 @@ Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie z
 W pliku `zad2_receiver.php` napisz kod PHP, który wypisze na stronie wszystkie wiadomości dla użytkownika o `id` przekazanym przez GET (zmienna o nazwie `userId`). Strona powinna spełniać nastepujące wymogi:
   1. (1 ptk) Wiadomości powinny zostać wyświetlone w formacie `<id wiadomości>, <treść waidomości>` po jednej wiadomości w linii. 
   2. (1 ptk) W przypadku w którym użytkownik nie posiada żadnej wiadomości w systemie na stronie powinien pojawić się komunikat `Brak wiadomości dla danego użytkownika`
-  3. (0.5 ptk) W pzypadku wejścia na stronę inną metodą niż GET na stronie powinien wyświetlić się komunikat `Proszę wejść na stronę metodą GET`. 
+  3. (0.5 ptk) W przypadku wejścia na stronę inną metodą niż GET na stronie powinien wyświetlić się komunikat `Proszę wejść na stronę metodą GET`. 
   4. (0.5 ptk) W przypadku wejścia na stronę i nie przesłania id strona powinna wyświetlić komunikat `Brak przesłania wymaganych danych GET`.
 
 W pliku `zad2_sender.html` znajduje się kilka linków które pomogą Ci przetestować twój kod.
