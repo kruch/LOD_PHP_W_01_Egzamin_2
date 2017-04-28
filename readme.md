@@ -59,7 +59,7 @@ W bazie danych mamy następujące tabele:
   
 Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie zmienne znajdujące się w pliku `zad1.php`):
   1. (1 pkt) Stworzenie tabeli `Destinations`:  
-     * ```SQL
+     ```SQL
      * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
      ```
      * kolumna `id` ma być kluczem głównym,  
