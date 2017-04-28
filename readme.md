@@ -56,13 +56,13 @@ W bazie danych mamy następujące tabele:
 ```
   
 Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie zmienne znajdujące się w pliku `zad1.php`):
-  1. (1 pkt) Stworzenie tabeli `Destinations`:
-    ```SQL
-    * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
-    ```
-    Kolumna `id` ma być kluczem głównym,  
-    kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelę `Destinations` z tabelką `Users` za pomocą relacji wiele do jednego  
-    (Użytkownik może mieć wiele destynacji, destynacja może być przypisana tylko do jednego użytkownika). 
+  1. (1 pkt) Stworzenie tabeli `Destinations`:  
+     ```SQL
+     * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
+     ```
+     Kolumna `id` ma być kluczem głównym,  
+     kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelę `Destinations` z tabelką `Users` za pomocą relacji wiele do jednego  
+     (Użytkownik może mieć wiele destynacji, destynacja może być przypisana tylko do jednego użytkownika). 
   2. (1 pkt) Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`.  
      Tabela łącząca ma się nazywać `Items_Orders`.
   3. (0.5 pkt) Dodanie do tabeli `Items_Orders` (stworzonej w punkcie 2) wpisu łączącego zamówienie (tabela `Orders`) o `id` `6` z przedmiotem (tabela `Items`) o `id` `2`.
