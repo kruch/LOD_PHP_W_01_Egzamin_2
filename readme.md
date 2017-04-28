@@ -33,15 +33,17 @@ Opisz je.
 ## Zadania praktyczne  
 
 Kod wpisz w odpowiednim pliku, zgodnie z poleceniem zadania.  
+
 **BARDZO WAŻNE** - Wasze zadania są sprawdzanie przy pomocy automatycznego systemu.  
+  
 Aby odpowiedzi zostały uznane za poprawne strony **MUSZĄ** wyświetlać te same komunikaty co w treści zadania,  
 a funkcje i metody **MUSZĄ** posiadać nazwy dokładnie takie same jak podane w zadaniu.
 
 ### Zadanie przygotowawcze
 
-Wypełnij dane do połączenia z bazą danych wpisując je do odpowiednich stałych znajdujących się w pliku `config.php`.  
-W zadaniach wymagających połączenia do bazy danych korzystaj z tych zmiennych (plik `config.php` jest już dołączony do plików odpowiedzi).  
-Zaimportuj też dane znajdujące się w pliku `exam.sql` do swojej bazy danych.
+1. Wypełnij dane do połączenia z bazą danych wpisując je do odpowiednich stałych znajdujących się w pliku `config.php`.  
+2. W zadaniach wymagających połączenia do bazy danych korzystaj z tych zmiennych (plik `config.php` jest już dołączony do plików odpowiedzi).  
+3. Zaimportuj też dane znajdujące się w pliku `exam.sql` do swojej bazy danych.
 
 **Zanim zaczniesz rozwiązywać zadanie dokładnie przeczytaj całą jego treść**
 
@@ -57,12 +59,12 @@ W bazie danych mamy następujące tabele:
   
 Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie zmienne znajdujące się w pliku `zad1.php`):
   1. (1 pkt) Stworzenie tabeli `Destinations`:  
-     ```SQL
+     * ```SQL
      * Destinations: id : int, user_id : int, address : text, lat : decimal(13,10), long : decimal(13,10)
      ```
-     Kolumna `id` ma być kluczem głównym,  
-     kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelę `Destinations` z tabelką `Users` za pomocą relacji wiele do jednego  
-     (Użytkownik może mieć wiele destynacji, destynacja może być przypisana tylko do jednego użytkownika). 
+     * kolumna `id` ma być kluczem głównym,  
+     * kolumna `user_id` ma być kluczem zewnętrznym łączącym tabelę `Destinations` z tabelką `Users` za pomocą relacji wiele do jednego  
+       (Użytkownik może mieć wiele destynacji, destynacja może być przypisana tylko do jednego użytkownika). 
   2. (1 pkt) Stworzenie relacji wiele do wielu między tabelami `Items` a `Orders`.  
      Tabela łącząca ma się nazywać `Items_Orders`.
   3. (0.5 pkt) Dodanie do tabeli `Items_Orders` (stworzonej w punkcie 2) wpisu łączącego zamówienie (tabela `Orders`) o `id` `6` z przedmiotem (tabela `Items`) o `id` `2`.
@@ -75,10 +77,13 @@ Napisz następujące zapytania SQL (zapytania mają być wpisane w odpowiednie z
 
 W pliku `zad2_receiver.php` napisz kod PHP, który wypisze na stronie wszystkie wiadomości dla użytkownika o `id` przekazanym przez `GET` (zmienna o nazwie `userId`).  
 Strona powinna spełniać następujące wymogi:
-  1. (1 pkt) Wiadomości powinny zostać wyświetlone w formacie `<id wiadomości>, <treść waidomości>` po jednej wiadomości w linii. 
-  2. (1 pkt) W przypadku w którym użytkownik nie posiada żadnej wiadomości w systemie, na stronie powinien pojawić się komunikat `Brak wiadomości dla danego użytkownika`
-  3. (0.5 pkt) W przypadku wejścia na stronę **inną** metodą niż `GET` na stronie powinien wyświetlić się komunikat `Proszę wejść na stronę metodą GET`. 
-  4. (0.5 pkt) W przypadku wejścia na stronę i nie przesłania `id` strona powinna wyświetlić komunikat `Brak przesłania wymaganych danych GET`.
+  1. (1 pkt) Wiadomości powinny zostać wyświetlone w formacie `<id wiadomości>, <treść wiadomości>` po jednej wiadomości w linii. 
+  2. (1 pkt) W przypadku w którym użytkownik nie posiada żadnej wiadomości w systemie, na stronie powinien pojawić się komunikat:  
+     `Brak wiadomości dla danego użytkownika`
+  3. (0.5 pkt) W przypadku wejścia na stronę **inną** metodą niż `GET` na stronie powinien wyświetlić się komunikat:  
+     `Proszę wejść na stronę metodą GET`. 
+  4. (0.5 pkt) W przypadku wejścia na stronę i nie przesłania `id` strona powinna wyświetlić komunikat:  
+     `Brak przesłania wymaganych danych GET`.
 
 W pliku `zad2_sender.html` znajduje się kilka linków które pomogą Ci przetestować twój kod.
 
@@ -88,8 +93,10 @@ W pliku `zad2_sender.html` znajduje się kilka linków które pomogą Ci przetes
 
 W pliku `zad3.php` jest formularz służący do dodania nowego przedmiotu do bazy danych.  
 Przeanalizuj go. Następnie w tym samym pliku napisz kod, który:
-  1. (1 pkt) W przypadku wejścia na tę stronę metodą `POST` pobierze informacje przesłane jako: `name`, `description`, `price`.  
-     Jeżeli nie zostaną przesłane wszystkie dane to strona powinna wyświetlić komunikat `Brak przesłania wymaganych danych POST`. 
+  1. (1 pkt) W przypadku wejścia na tę stronę metodą `POST` pobierze informacje przesłane jako:  
+     `name`, `description`, `price`.  
+     Jeżeli nie zostaną przesłane wszystkie dane to strona powinna wyświetlić komunikat:  
+     `Brak przesłania wymaganych danych POST`. 
   2. (1 pkt) Doda te dane do bazy danych do tabeli `Items`.  
      Po dodaniu przedmiotu powinien wyświetlić komunikat:  
      `Do bazy danych został dodany nowy przedmiot o id <id dodanego przedmiotu>`
@@ -115,10 +122,15 @@ Przeanalizuj dokładnie jej kod a następnie:
 Napisz kod PHP klasy `VIPUser`. Klasa ma spełniać następujące właściwości:
   1. (0.5 pkt) Dziedziczyć po klasie `User` (znajduje się w pliku `User.php`).
   2. (0.5 pkt) Mieć dodatkowy publiczny atrybut: ```vipCardNumber```.
-  3. (1 pkt) Mieć konstruktor, który przyjmuje następujące dane: `imię, nazwisko, mail, numer karty VIP`.
+  3. (1 pkt) Mieć konstruktor, który przyjmuje następujące dane:  
+     * imię
+     * nazwisko
+     * mail
+     * numer karty VIP
+     
      Imię, nazwisko i mail mają być przekazywane do konstruktora klasy nadrzędnej.  
      Konstruktor ma sprawdzać, czy podany numer jest prawidłowy (założenia są opisane w punkcie `4`).  
-     Jeżeli jest  &ndash; to go nastawiać, jeżeli nie  &ndash; to numer ma być nastawiony na ```null```.
+     Jeżeli jest - to go nastawiać, jeżeli nie  &ndash; to numer ma być nastawiony na ```null```.
   4. (1 pkt) Mieć publiczną, statyczną metodę ```checkCard($newNumber)```  
      Numer jest prawidłowy, jeżeli jest większy niż `999` i podzielny przez `2`.
      Funkcja ma **zwracać** wartość logiczną.
