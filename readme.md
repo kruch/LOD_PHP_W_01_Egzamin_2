@@ -99,7 +99,7 @@ Przeanalizuj go. Następnie w tym samym pliku napisz kod, który:
      `Brak przesłania wymaganych danych POST`. 
   2. (1 pkt) Doda te dane do bazy danych do tabeli `Items`.  
      Po dodaniu przedmiotu powinien wyświetlić komunikat:  
-     `Do bazy danych został dodany nowy przedmiot o id <id dodanego przedmiotu>`
+     `Do bazy danych został dodany nowy przedmiot o id <id dodanego przedmiotu>`  
      np. `Do bazy danych został dodany nowy przedmiot o id 11`.
 
 **Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.**
