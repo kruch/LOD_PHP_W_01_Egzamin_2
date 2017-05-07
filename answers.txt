@@ -1,0 +1,18 @@
+Pytanie 1 
+
+JEDEN do JEDNEGO - PESEL -> osoba, kazda osoba moze miec tylko jeden pesel przez co wartosc pesel staje sie unikalną.
+
+JEDEN do WIELU - Jedna kobieta może być matką wielu dzieci, ale każde z tych dzieci będzie miało tylko jedną matkę.
+
+WIELE do WIELU - wielu nauczycieli moze uczyc wiele klas jednoczesnie
+
+
+Pytanie 2. 
+
+Abstrakcja - odwołanie do logiki umieszczonej w klasie. Wykonanie jakiejs czynności przyniesie pewien efekt, nie insteresuje nas jak to się dzieje. Włączenie lampki sprawi że zacznie ona świecić, nie koniecznie musimy wiedzieć jak działa prąd zasilający ją.
+
+Dziedziczenie - obiekty mogą dziedziczyć po sobie funkcjonalnosc i własciwosci. Obiekt Krzesło dziedziczy po klasie mebel. Material wykonania i zastosowanie domowe lub biurowe, ale rozszerzamy go o możliwość siadania.
+
+Hermetyzacja - ochrona danych i metod przed niezaplanowanym uzyciem. Klasa krzesło nie powinna nam pozwalać dodawać stołów.
+
+Polimorfizm - możliwość "podszywania" się pod inną klasę. Krzesło jest jednocześnie meblem. Ma te same funkcjonalności i szczególne właściwości.
